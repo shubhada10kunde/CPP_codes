@@ -9,4 +9,9 @@ public:
     void print(); // function to print complex no
 
     void addition(MyComplex, MyComplex);
+    void subtraction(MyComplex, MyComplex);
+    void multiplication(MyComplex, MyComplex);
+    void division(MyComplex, MyComplex);
+    void norm(MyComplex, MyComplex);
+    void complexConjugate(MyComplex, MyComplex);
 };

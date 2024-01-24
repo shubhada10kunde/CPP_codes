@@ -26,5 +26,12 @@ int main()
     c3.print();
     cout << endl;
 
+    c3.multiplication(c1, c2);
+    c3.print();
+    cout << endl;
+
+    c3.division(c1, c2);
+    c3.print();
+    cout << endl;
     return 0;
 }
