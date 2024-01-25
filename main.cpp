@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    MyComplex c1, c2, c3;
+    MyComplex c1, c2, c3, c4;
     c1.print();
 
     c1.real = 10;
@@ -22,16 +22,38 @@ int main()
     c3.print();
     cout << endl;
 
+    cout << "addition :" << endl;
     c3.addition(c1, c2);
     c3.print();
     cout << endl;
 
+    cout << endl;
+    cout << "subtraction :" << endl;
+    c3.subtraction(c1, c2);
+    c3.print();
+    cout << endl;
+
+    cout << endl;
+    cout << "multiplication :" << endl;
     c3.multiplication(c1, c2);
     c3.print();
     cout << endl;
 
+    cout << endl;
+    cout << "division :" << endl;
     c3.division(c1, c2);
-    c3.print();
+    // c3.print();
+    cout << endl;
+
+    cout << endl;
+    cout << "magnitude :" << endl;
+    c3.norm(c1, c2);
+    // c3.print();
+    cout << endl;
+
+    cout << "conjugate :" << endl;
+    c4.complexConjugate(c1, c2);
+    // c4.print();
     cout << endl;
     return 0;
 }
