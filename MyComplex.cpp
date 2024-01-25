@@ -8,7 +8,7 @@ MyComplex::MyComplex()
     real = 0;
     img = 0;
 }
-
+//function to print complex no
 void MyComplex::print()
 {
     cout << real << "+" << img << "i";
