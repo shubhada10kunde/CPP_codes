@@ -35,14 +35,14 @@ void MyComplex::multiplication(MyComplex c1, MyComplex c2)
 
 void MyComplex::division(MyComplex c1, MyComplex c2)
 {
-    cout << (c1.real * c2.real + c1.img * c2.img) / (c2.real * c2.real + c2.img * c2.img);
-    cout << (c1.real * c2.img + c1.img * c2.real) / (c2.real * c2.real + c2.img * c2.img);
+    real = (c1.real * c2.real + c1.img * c2.img) / (c2.real * c2.real + c2.img * c2.img);
+    img = (c1.real * c2.img + c1.img * c2.real) / (c2.real * c2.real + c2.img * c2.img);
 }
 
 void MyComplex::norm(MyComplex c1, MyComplex c2)
 {
-    cout << sqrt(c1.real * c1.real + c1.img * c1.img) << endl;
-    cout << sqrt(c2.real * c2.real + c2.img * c2.img) << endl;
+    real = sqrt(c1.real * c1.real + c1.img * c1.img);
+    img = sqrt(c2.real * c2.real + c2.img * c2.img);
 }
 
 void MyComplex::complexConjugate(MyComplex c1, MyComplex c2)

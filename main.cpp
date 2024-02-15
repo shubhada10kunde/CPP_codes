@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     MyComplex c1, c2, c3, c4;
-    c1.print();
+    //  c1.print();
 
     c1.real = 10;
     c1.img = 5;
@@ -41,16 +41,18 @@ int main()
 
     cout << endl;
     cout << "division :" << endl;
-    c3.division(c1, c2);
-    // c3.print();
+    c4.division(c1, c2);
+    cout << "\n c4 :: ";
+    c4.print();
     cout << endl;
 
     cout << endl;
     cout << "magnitude :" << endl;
     c3.norm(c1, c2);
-    // c3.print();
+    c3.print();
     cout << endl;
 
+    cout << endl;
     cout << "conjugate :" << endl;
     c4.complexConjugate(c1, c2);
     // c4.print();
