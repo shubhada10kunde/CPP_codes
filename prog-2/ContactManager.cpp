@@ -54,7 +54,7 @@ void ContactManager::edit()
     // ListAllContacts();
 
     // select which contact we want to edit
-    cout << "\n select contact to edit first name:";
+    cout << "\n select contact to edit:";
     int id;
     cin >> id;
 
@@ -69,6 +69,8 @@ void ContactManager::edit()
 
     cout << "\n enter new email::";
     cin >> info[id - 1].email;
+
+    ListAllContacts();
 }
 
 /**
@@ -77,10 +79,53 @@ void ContactManager::edit()
 
 void ContactManager::EditFirstName()
 {
-    cout << "\n select contact to edit:";
+    cout << "\n select contact to edit first name:";
     int id;
     cin >> id;
 
     cout << "Enter first name::";
     cin >> info[id - 1].FirstName;
+
+    ListAllContacts();
+}
+
+/**
+ * @brief function to edit last name
+ */
+
+void ContactManager::EditLastName()
+{
+    cout << "\n select contact to edit last name:";
+    int id;
+    cin >> id;
+
+    cout << "Enter last name::";
+    cin >> info[id - 1].LastName;
+    ListAllContacts();
+}
+
+void ContactManager::Remove()
+{
+    // select by id which contact u want to remove
+    int id;
+    cout << "\n Enter id of the contact to remove user::";
+    cin >> id;
+    // system("cls");
+
+    if (id >= 1 && id <= info.size())
+    {
+        info[id - 1].FirstName = "";
+        info[id - 1].LastName = "";
+        info[id - 1].number = 0;
+        info[id - 1].email = "";
+
+        // points to the beginning of the vector & delete the elements from the vector
+        info.erase(info.begin() + (id - 1));
+        cout << "contact removed successfully.\n";
+    }
+    else
+    {
+        cout << "Invalid Id.No contact removed.\n";
+    }
+    ListAllContacts();
 }
