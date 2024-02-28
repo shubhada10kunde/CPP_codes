@@ -12,12 +12,14 @@ int main()
     c.Add("Vaish", "Gurav", 98908983, "vg@gmail.com");
     c.ListAllContacts();
     c.edit();
-    // c.ListAllContacts();
+    //  c.ListAllContacts();
     c.EditFirstName();
-    // c.ListAllContacts();
-    c.Remove();
-    // c.ListAllContacts();
+    //  c.ListAllContacts();
     c.EditLastName();
+
+    c.EditPhoneNumber();
+
+    c.Remove();
 
     return 0;
 }

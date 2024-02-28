@@ -104,6 +104,36 @@ void ContactManager::EditLastName()
     ListAllContacts();
 }
 
+/**
+ * @brief function to edit phone number
+ */
+
+void ContactManager::EditPhoneNumber()
+{
+    cout << "\n select contact to edit phone number:";
+    int id;
+    cin >> id;
+
+    cout << "Enter phone number::";
+    cin >> info[id - 1].number;
+    ListAllContacts();
+}
+
+/**
+ * @brief function to edit email
+ */
+
+void ContactManager::EditEmail()
+{
+    cout << "\n select contact to edit email:";
+    int id;
+    cin >> id;
+
+    cout << "Enter email::";
+    cin >> info[id - 1].email;
+    ListAllContacts();
+}
+
 void ContactManager::Remove()
 {
     // select by id which contact u want to remove
