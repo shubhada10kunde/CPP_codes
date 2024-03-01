@@ -1,9 +1,10 @@
 #include "ContactManager.hpp"
+
 using namespace std;
 
 ContactManager::ContactManager()
 {
-    cout << "\n default constructor...\n";
+    std::cout << "\n default constructor...\n";
     // FirstName = "shubhu";
     // LastName = "kunde";
     // number = 9876543;
@@ -40,7 +41,7 @@ void ContactManager::ListAllContacts()
 {
     for (int i = 0; i < info.size(); i++)
     {
-        cout << "first name::" << info[i].FirstName << "\tlast name::" << info[i].LastName << "\tnumber::" << info[i].number << "\temail::" << info[i].email << endl;
+        std::cout << "first name::" << info[i].FirstName << "\tlast name::" << info[i].LastName << "\tnumber::" << info[i].number << "\temail::" << info[i].email << endl;
     }
 }
 
@@ -54,20 +55,20 @@ void ContactManager::edit()
     // ListAllContacts();
 
     // select which contact we want to edit
-    cout << "\n select contact to edit:";
+    std::cout << "\n select contact to edit:";
     int id;
     cin >> id;
 
-    cout << "Enter first name::";
+    std::cout << "Enter first name::";
     cin >> info[id - 1].FirstName;
 
-    cout << "\n Enter last name::";
+    std::cout << "\n Enter last name::";
     cin >> info[id - 1].LastName;
 
-    cout << "\n enter number::";
+    std::cout << "\n enter number::";
     cin >> info[id - 1].number;
 
-    cout << "\n enter new email::";
+    std::cout << "\n enter new email::";
     cin >> info[id - 1].email;
 
     ListAllContacts();
@@ -79,11 +80,11 @@ void ContactManager::edit()
 
 void ContactManager::EditFirstName()
 {
-    cout << "\n select contact to edit first name:";
+    std::cout << "\n select contact to edit first name:";
     int id;
     cin >> id;
 
-    cout << "Enter first name::";
+    std::cout << "Enter first name::";
     cin >> info[id - 1].FirstName;
 
     ListAllContacts();
@@ -95,11 +96,11 @@ void ContactManager::EditFirstName()
 
 void ContactManager::EditLastName()
 {
-    cout << "\n select contact to edit last name:";
+    std::cout << "\n select contact to edit last name:";
     int id;
     cin >> id;
 
-    cout << "Enter last name::";
+    std::cout << "Enter last name::";
     cin >> info[id - 1].LastName;
     ListAllContacts();
 }
@@ -110,11 +111,11 @@ void ContactManager::EditLastName()
 
 void ContactManager::EditPhoneNumber()
 {
-    cout << "\n select contact to edit phone number:";
+    std::cout << "\n select contact to edit phone number:";
     int id;
     cin >> id;
 
-    cout << "Enter phone number::";
+    std::cout << "Enter phone number::";
     cin >> info[id - 1].number;
     ListAllContacts();
 }
@@ -125,11 +126,11 @@ void ContactManager::EditPhoneNumber()
 
 void ContactManager::EditEmail()
 {
-    cout << "\n select contact to edit email:";
+    std::cout << "\n select contact to edit email:";
     int id;
     cin >> id;
 
-    cout << "Enter email::";
+    std::cout << "Enter email::";
     cin >> info[id - 1].email;
     ListAllContacts();
 }
@@ -138,7 +139,7 @@ void ContactManager::Remove()
 {
     // select by id which contact u want to remove
     int id;
-    cout << "\n Enter id of the contact to remove user::";
+    std::cout << "\n Enter id of the contact to remove user::";
     cin >> id;
     // system("cls");
 
@@ -155,7 +156,164 @@ void ContactManager::Remove()
     }
     else
     {
-        cout << "Invalid Id.No contact removed.\n";
+        std::cout << "Invalid Id.No contact removed.\n";
     }
     ListAllContacts();
 }
+
+void ContactManager::RemoveFirstName()
+{
+    int id;
+    std::cout << "\n Enter id of the contact to remove firstname::";
+    cin >> id;
+
+    if (id >= 1 && id <= info.size())
+    {
+        info[id - 1].FirstName = " ";
+        info.erase(info.begin() + (id - 1));
+    }
+    ListAllContacts();
+}
+
+void ContactManager::RemoveLastName()
+{
+    int id;
+    std::cout << "\n Enter id of the contact to remove last name::";
+    cin >> id;
+
+    if (id >= 1 && id <= info.size())
+    {
+        info[id - 1].LastName = "";
+        info.erase(info.begin() + (id - 1));
+    }
+    ListAllContacts();
+}
+
+void ContactManager::RemoveNumber()
+{
+    int id;
+    cout << "\n Enter id of the contact to remove phone number::";
+    cin >> id;
+
+    if (id >= 1 && id <= info.size())
+    {
+        info[id - 1].number = 0;
+        info.erase(info.begin() + (id - 1));
+    }
+    ListAllContacts();
+}
+
+void ContactManager::RemoveEmail()
+{
+    int id;
+    cout << "\n Enter id of the contact to remove email::";
+    cin >> id;
+
+    if (id >= 1 && id <= info.size())
+    {
+        info[id - 1].email = "";
+        info.erase(info.begin() + (id - 1));
+    }
+    ListAllContacts();
+}
+
+void ContactManager::SearchFirstName()
+{
+    string FirstName;
+    std::cout << "\n enter firstname to search contact::";
+    cin >> FirstName;
+    bool found = false;
+    for (int i = 0; i < info.size(); ++i) // it can store the maximum size of a theoretically possible array or an object.
+    {                                     // ensures that the loop can handle the maximum possible size of an object, as size_t
+        if (info[i].FirstName == FirstName)
+        {
+            found = true;
+            cout << "first name::" << info[i].FirstName << "\tlast name::" << info[i].LastName << "\tnumber::" << info[i].number << "\temail::" << info[i].email << endl;
+        }
+
+        // ListAllContacts();
+    }
+    if (!found)
+    {
+        cout << "first name not found::\n";
+    }
+    // ListAllContacts();
+}
+
+void ContactManager::SearchLastName()
+{
+    string LastName;
+    std::cout << "\n enter firstname to search contact::";
+    cin >> LastName;
+    bool found = false;
+    for (int i = 0; i < info.size(); ++i) // it can store the maximum size of a theoretically possible array or an object.
+    {                                     // ensures that the loop can handle the maximum possible size of an object, as size_t
+        if (info[i].LastName == LastName)
+        {
+            found = true;
+            cout << "first name::" << info[i].FirstName << "\tlast name::" << info[i].LastName << "\tnumber::" << info[i].number << "\temail::" << info[i].email << endl;
+        }
+
+        // ListAllContacts();
+    }
+    if (!found)
+    {
+        cout << "last name not found::\n";
+    }
+    // ListAllContacts();
+}
+
+void ContactManager::SearchEmail()
+{
+    string email;
+    std::cout << "\n enter phone no to search contact::";
+    cin >> email;
+    bool found = false;
+    for (size_t i = 0; i < info.size(); ++i) // it can store the maximum size of a theoretically possible array or an object.
+    {                                        // ensures that the loop can handle the maximum possible size of an object, as size_t
+        if (info[i].email == email)
+        {
+            found = true;
+            cout << "first name::" << info[i].FirstName << "\tlast name::" << info[i].LastName << "\tnumber::" << info[i].number << "\temail::" << info[i].email << endl;
+        }
+
+        // ListAllContacts();
+    }
+    if (!found)
+    {
+        cout << "email not found::\n";
+    }
+    // ListAllContacts();
+}
+void ContactManager::backup()
+{
+    ofstream outFile("backup.txt");
+    if (outFile.is_open())
+    {
+        for (const auto &entry : info)
+        {
+            outFile << entry.FirstName << "," << entry.LastName << "," << entry.number << "," << entry.email << endl;
+        }
+        outFile.close();
+        cout << "Backup of contact created\n";
+    }
+    else
+    {
+        cout << "Unable to Backup\n";
+    }
+    // backup = info;
+}
+
+// void ContactManager::restore()
+// {
+//     //string restFile;
+//     ifstream ifFile("backup.txt");
+//     while(!ifFile.eof())
+//     {
+//     ifFile>>info;
+//     }
+//     if (!ifFile.is_open())
+//     {
+//         cout << "could not open file\n";
+//     }
+// }

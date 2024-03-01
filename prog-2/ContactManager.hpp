@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 struct data
 {
@@ -13,8 +14,11 @@ struct data
 
 class ContactManager
 {
+    // private:
+    // std::vector<struct data>backup;
 public:
     std::vector<struct data> info;
+    // std::vector<struct data> backup;
 
     ContactManager(); // default constructor                                                    // default constructor
     // ContactManager(std::string, std::string, unsigned long, std::string); // parameterised constructor
